@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <link rel="stylesheet" href="../static/css/c.css">
+
+    <script></script>
+
+<title>Student Registration Form</title>
+
+</head>
+
+
+
+<div>
+  <div>
+      <a href="/">Student List</a>
+  <a href="./edit_student">Edit Student</a>
+
+
+</div>
+  <h1 id="list_title">Hogwarts Student List</h1>
+
+</div>
+
+    
+    <body>
+    <h3>STUDENT REGISTRATION FORM</h3>
+    
+    <form action="/add_student">
+
+    <table align="center" cellpadding = "10">
+    
+    <!----- First Name ---------------------------------------------------------->
+    <tr>
+    <td>First Name</td>
+    <td><input type="text" name="First_Name" maxlength="30"/>
+    (max 30 characters a-z and A-Z)
+    </td>
+    </tr>
+    
+    <!----- Last Name ---------------------------------------------------------->
+    <tr>
+    <td>Last Name</td>
+    <td><input type="text" name="Last_Name" maxlength="30"/>
+    (max 30 characters a-z and A-Z)
+    </td>
+    </tr>
+    
+        
+    <!----- Last Name ---------------------------------------------------------->
+    <tr>
+        <td>Course Interest</td>
+        <td><input type="text" name="Course_Interest" maxlength="30"/>
+        (max 30 characters a-z and A-Z)
+        </td>
+        </tr>
+    
+
+    <!----- Submit and Reset ------------------------------------------------->
+    <tr>
+    <td colspan="2" align="center">
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    </td>
+    </tr>
+    </table>
+    
+    </form>
+    
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block body %}
+
+<div>
+  <div>
+    <a href="./">Student List</a>
+    <a href="/add_student">Add Student</a>
+  </div>
+  <h1 id="list_title">Hogwarts Student List</h1>
+</div>
+<div>
+  <h1>edit student</h1>
+  <form action="/edit_student" method="POST">
+  ID: <input id="txt" type="text" name="id" />
+      <input type="submit" value="Submit">
+
+    </form>
+</div>
+{% for students in students_list %}
+
+<h1>{{ students.last_name }}</h1>
+
+
+{% endfor %}
+<script src="{{url_for('static', filename='css/please.js')}}"></script>
+
+{% endblock %}
