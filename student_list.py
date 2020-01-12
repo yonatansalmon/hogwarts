@@ -14,7 +14,7 @@ course_interest = random.choices(courses, k=2)
 
 students = [
     {
-        "id": "1",
+        "id": 1,
         "first_name": "Yonatan",
         "last_name": "Salmon",
         "creation_time": time.ctime(),
@@ -23,7 +23,7 @@ students = [
         "desired_skills": desired_skillsToStr,
         "course_interest": course_interest,
     },
-        {"id": "2",
+        {"id": 2,
         "first_name": "Mark",
         "last_name": "Something",
         "creation_time": time.ctime(),
@@ -33,7 +33,7 @@ students = [
         "course_interest":course_interest,
     },
     {
-        "id": "3",
+        "id": 3,
         "first_name": "Jhons",
         "last_name": "Mosokfn",
         "creation_time": time.ctime(),
@@ -42,7 +42,7 @@ students = [
         "desired_skills": desired_skillsToStr,
         "course_interest":course_interest,
     },
-    {"id": "4",
+    {"id": 4,
         "first_name": "Susan",
         "last_name": "Salmafafafafon",
         "creation_time": time.ctime(),
@@ -52,7 +52,7 @@ students = [
         "course_interest":course_interest,
      },
 
-    {"id": "5",
+    {"id": 5,
      "first_name": "uguian",
      "last_name": "yfyuSalmafafafafon",
      "creation_time": time.ctime(),

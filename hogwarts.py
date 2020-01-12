@@ -21,8 +21,9 @@ def add_students():
     if request.method == 'POST':
         fname = request.form.get('First_Name')
         lname = request.form.get('Last_Name')
-        course = request.form.get('Course_Interest')
-        students_list.append({"first_name": fname, "last_name": lname, "course": course})
+        course = request.form.get('Creation_Time')
+        students_list.append({"first_name": fname, "last_name": lname, "creation_time": course})
+        return "student added"
     else:
         return render_template('add_student.html')
 
@@ -31,6 +32,27 @@ def add_students():
 def edit_student():
     students_list = students
     return render_template("edit_student.html", students_list=students_list)
+
+
+@app.route("/students/<int:id>", methods=['GET'])
+def get_student(id):
+    students_list = students
+    student = [student for student in students_list if student['id'] == id]
+    return render_template("student.html", student=student[0])
+
+
+@app.route("/students/<int:id>/edit", methods=['GET', 'POST'])
+def get_student2(id):
+    students_list = students
+    student = [student for student in students_list if student['id'] == id][0]
+    if request.method == 'GET':
+        return render_template('edit_student.html', student=student)
+    elif request.method == 'POST':
+        a = request.form.get('last_name')
+        student['last_name'] = a
+        return render_template('student.html', student=student)
+
+
 
 
 if __name__ == "__main__":
