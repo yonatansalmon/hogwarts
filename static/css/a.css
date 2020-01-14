@@ -7,11 +7,17 @@ th{
   font-size: 22px;
 }
 
+#existing_skills_cell{
+  width: 300px;
+}
 #id{
   color: red;
 }
 
-
+.btn{
+  display: flex;
+  justify-content: center;
+}
 
 .border_bottom{
   border-bottom: 1px solid black;
@@ -42,7 +48,7 @@ h3{
     text-align: left;
     align-self: center;
     list-style-position: inside;
-    width: 250px;
+    width: 90vw;
     
 
 }
@@ -90,11 +96,6 @@ ol{
   padding: 15px;
 }
 
-#one_student{
-
-  width: 50vw;
-}
-
 .one_student_list{
 
   text-align: center;
@@ -123,5 +124,26 @@ ol{
   }
 
   #first_name_data{
+    text-align: center;
+    width: 200px;
+  }
+
+  #course_interest {
+    width: 250px;
+  }
+
+  #first_name{
+    width: 300px;
+  }
+
+  #desired_skills{
+    width: 110px;
+  }
+
+  #id_title{
+    width: 80px;
+  }
+
+  #center_id {
     text-align: center;
   }

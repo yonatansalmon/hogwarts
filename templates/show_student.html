@@ -10,27 +10,27 @@
   {% extends 'index.html' %} {% block body %}
   <div class="container">
     <div>
-      <div>
-        <a href="/add_student">Add Student</a>
-      </div>
+ 
+     
       <h1 id="list_title">Hogwarts Student List</h1>
+      <button><a href="/add_student">Add Student</a></button>
     </div>
 
     <table>
       <tr class="border_bottom">
-        <th>ID</th>
-        <th>First Lame</th>
+        <th id="id_title">ID</th>
+        <th id="first_name_student">First Lame</th>
         <th>Last Name</th>
         <th>Creation Time</th>
         <th>Existing Skills</th>
         <th>Desired Skills</th>
-        <th>Course Interest</th>
+        <th >Course Interest</th>
       </tr>
 
       {% for student in students_list %}
 
       <tr class="border_bottom">
-        <td><a id="id" href="/students/{{student.id}}">{{student.id}}</a></td>
+        <td id="center_id"><a id="id" href="/students/{{student.id}}">{{student.id}}</a></td>
         <td id="first_name_data">{{student.first_name}}</td>
         <td id="last_name_data">{{student.last_name}}</td>
         <td>{{student.creation_time}}</td>
