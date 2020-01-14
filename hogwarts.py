@@ -3,7 +3,6 @@ import time
 from flask import Flask, jsonify, render_template, request, redirect, url_for
 from student_list import students, courses
 
-
 count = 5
 
 app = Flask(__name__)
@@ -23,12 +22,20 @@ def add_students():
         fname = request.form.get('First_Name')
         lname = request.form.get('Last_Name')
         course = request.form.get('Course_Interest')
-        magic_skillz = request.form.getlist('Magic_skillz[]')
-        desired_skillz = request.form.getlist('Desired_skillz[]')
-        last_id = str(int(students_list[-1]["id"]) + 1)
-        students_list.append({"id": last_id, "first_name": fname, "last_name": lname, \
-                              "creation_time": time.ctime(), "last_update": time.ctime(), \
-                              "existing_skills": magic_skillz, "desired_skills": desired_skillz,
+        magic_skills = request.form.getlist('magic_skills[]')
+        magic_skills = [{'skill': skill} for skill in magic_skills]
+        level = request.form.getlist("lvl[]")
+        for i in range(len(magic_skills)):
+            magic_skills[i]["level"] = level[i]
+        desired_skills = request.form.getlist('desired_skills[]')
+        last_id = int(students_list[-1]["id"] + 1)
+        students_list.append({"id": last_id,
+                              "first_name": fname,
+                              "last_name": lname,
+                              "creation_time": time.ctime(),
+                              "last_update": time.ctime(),
+                              "existing_skills": magic_skills,
+                              "desired_skills": desired_skills,
                               "course_interest": [course], })
         return redirect('/')
     else:
@@ -49,20 +56,24 @@ def get_student2(id):
     if request.method == 'GET':
         return render_template('edit_student.html', student=student)
     elif request.method == 'POST':
-        fname = request.form.get('first_name')
-        lname = request.form.get('last_name')
-        cinterest = request.form.get('course_interest')
-        cinterest_split = cinterest.split(",")
-        dskills = request.form.get('desired_skills')
-        dskills_split = dskills.split(",")
-        eskills = request.form.get('existing_skills')
-        eskills_split = eskills.split(",")
-        student['first_name'] = fname
-        student['last_name'] = lname
-        student['course_interest'] = cinterest_split
-        student['desired_skills'] = dskills_split
-        student['desired_skills'] = eskills_split
-        return render_template('student.html', student=student)
+        fname = request.form.get('First_Name')
+        lname = request.form.get('Last_Name')
+        course = request.form.get('Course_Interest')
+        magic_skills = request.form.getlist('magic_skills[]')
+        magic_skills = [{'skill': skill} for skill in magic_skills]
+        level = request.form.getlist("lvl[]")
+        for i in range(len(magic_skills)):
+            magic_skills[i]["level"] = level[i]
+        desired_skills = request.form.getlist('desired_skills[]')
+        student["first_name"] = fname
+        student["last_name"] = lname
+        student["course_interest"] = [course]
+        student["last_update"] = time.ctime()
+        student["existing_skills"] = magic_skills
+        student["desired_skills"] = desired_skills
+        return redirect('/')
+    else:
+        return render_template("student_edit.html", student=student)
 
 
 @app.after_request

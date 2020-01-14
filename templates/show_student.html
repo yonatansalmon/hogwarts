@@ -8,59 +8,60 @@
   </head>
 
   {% extends 'index.html' %} {% block body %}
-
-  <div>
+  <div class="container">
     <div>
-      <a href="/add_student">Add Student</a>
+      <div>
+        <a href="/add_student">Add Student</a>
+      </div>
+      <h1 id="list_title">Hogwarts Student List</h1>
     </div>
-    <h1 id="list_title">Hogwarts Student List</h1>
+
+    <table>
+      <tr class="border_bottom">
+        <th>ID</th>
+        <th>First Lame</th>
+        <th>Last Name</th>
+        <th>Creation Time</th>
+        <th>Existing Skills</th>
+        <th>Desired Skills</th>
+        <th>Course Interest</th>
+      </tr>
+
+      {% for student in students_list %}
+
+      <tr class="border_bottom">
+        <td><a id="id" href="/students/{{student.id}}">{{student.id}}</a></td>
+        <td id="first_name_data">{{student.first_name}}</td>
+        <td id="last_name_data">{{student.last_name}}</td>
+        <td>{{student.creation_time}}</td>
+        <td>
+          <ol>
+            {% for skill in student.existing_skills %}
+            <li>{{skill.skill}} {{skill.level}}</li>
+
+            {% endfor %}
+          </ol>
+        </td>
+        <td>
+          <ol>
+            {% for skill in student.desired_skills %}
+            <li>{{skill}}</li>
+
+            {% endfor %}
+          </ol>
+        </td>
+        <td>
+          <ol>
+            {% for course in student.course_interest %}
+            <li>{{course}}</li>
+
+            {% endfor %}
+          </ol>
+        </td>
+      </tr>
+
+      {% endfor %} {% endblock %}
+    </table>
   </div>
-
-  <table>
-    <tr>
-      <th id="id">ID</th>
-      <th>First Lame</th>
-      <th>Last Name</th>
-      <th>Creation Time</th>
-      <th>Existing Skills</th>
-      <th>Desired Skills</th>
-      <th>Course Interest</th>
-    </tr>
-
-    {% for student in students_list %}
-
-    <tr>
-      <td><a href="/students/{{student.id}}">{{student.id}}</a></td>
-      <td>{{student.first_name}}</td>
-      <td>{{student.last_name}}</td>
-      <td>{{student.creation_time}}</td>
-      <td>
-        <ol>
-          {% for skill in student.existing_skills %}
-          <li>{{skill}}</li>
-
-          {% endfor %}
-        </ol>
-      </td>
-      <td>
-        <ol>
-          {% for skill in student.desired_skills %}
-          <li>{{skill}}</li>
-
-          {% endfor %}
-        </ol>
-      </td>
-      <td>
-        <ol>
-          {% for course in student.course_interest %}
-          <li>{{course}}</li>
-
-          {% endfor %}
-        </ol>
-      </td>
-    </tr>
-    <script src="{{url_for('static', filename='css/please.js')}}"></script>
-
-    {% endfor %} {% endblock %}
-  </table>
+  <script src="{{url_for('static', filename='css/please.js')}}"></script>
 </html>

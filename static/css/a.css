@@ -1,7 +1,30 @@
 body{
-background-color:purple
+  background-image: url("https://ae01.alicdn.com/kf/HTB1Q4Q3ax2rK1RkSnhJq6ykdpXax/Harry-Potter-Magician-s-Duel-Staircase-backdrop-High-quality-Computer-print-party-photography-studio-background.jpg");
 }
 
+th{
+  text-align: center;
+  font-size: 22px;
+}
+
+#id{
+  color: red;
+}
+
+
+
+.border_bottom{
+  border-bottom: 1px solid black;
+}
+.select_desired_skills{
+  width: 118px;
+  height: 149px;
+  font-size: 14px;
+  text-align: center;
+  color: #9e9eff;
+  background-color: black;
+
+}
 
 h3{
     font-family: Calibri;
@@ -10,13 +33,36 @@ h3{
     font-style: normal; 
     font-weight: bold; 
     color:SlateBlue;
-    text-align: center; 
+    text-align: center;
     text-decoration: underline
   }
 
- #hi{
- color: red}
 
+#one_student{
+    text-align: left;
+    align-self: center;
+    list-style-position: inside;
+    width: 250px;
+    
+
+}
+
+td{
+  padding: 10px;
+}
+
+
+.name_td{
+text-align: center;
+padding-left:50px;
+
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+}
 
   table{
     font-family: Calibri; 
@@ -24,20 +70,58 @@ h3{
     font-size: 11pt; 
     font-style: normal;
     font-weight: bold;
-    text-align:center; 
+    text-align: left;
+    list-style-position: inside;
+    list-style-type: none;
     background-color: SlateBlue; 
     border-collapse: collapse; 
-    border: 2px solid navy
+    border: 2px solid navy;
+    align-self: center;
+
   }
   table.inner{
-    border: 0px
+    border: 5px
   }
+  #registration_form{
+    text-align: center;
+  }
+ol{
+  list-style-type: none;
+  padding: 15px;
+}
+
+#one_student{
+
+  width: 50vw;
+}
+
+.one_student_list{
+
+  text-align: center;
+  padding:20px; 
+}
+
+#one_student_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.level_label{
 
 
-  #id{
-      background-color: red;
-  }
+}
+
+
+
 
   #list_title{
       text-align: center;
+  }
+
+  #last_name_data{
+    text-align: center;
+  }
+
+  #first_name_data{
+    text-align: center;
   }

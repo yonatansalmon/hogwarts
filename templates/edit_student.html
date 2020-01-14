@@ -3,44 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/a.css') }}"
+  />
 </head>
 <body>
 <a href="/">Students table</a>
 <h1>Edit student</h1>
 <form action="edit" method="post">
+      
     <table align="center" cellpadding = "10">
-    <!----- First Name ---------------------------------------------------------->
-    <tr>
-    <td>First Name</td>
-    <td><input type="text" name="First_Name" maxlength="30" value="{{ student.first_name }}"/>
-    (max 30 characters a-z and A-Z)
-    </td>
+
+        <tr class="border_bottom">
+            <td>First Name</td>
+            <td><input type="text" name="First_Name" value = {{student.first_name}}></td>
+        </tr>
+
+        <tr class="border_bottom">
+            <td>Last Name</td>
+            <td><input type="text" name="Last_Name" value="{{student.last_name}}"></td>
+        </tr>
+
+        <tr class="border_bottom">
+            <td>Courses</td>
+            <td>
+                <select name="Course_Interest">
+                     <option value="Alchemy basics">{{student.course_interest[0]}}</option>
+                    <option value="Alchemy basics">Alchemy Basics</option>
+                    <option value="Alchemy advanced">Alchemy Advanced</option>
+                    <option value="Magic for day-to-day life">Magic For Day-To-Day Life</option>
+                    <option value="Magic for medical professionals">Magic For Medical Professionals</option>
+                    <option value="Dating with magic">Dating With Magic</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Magic Skills</td> <td>Level </td>
+        </tr>
+
+        <tr>
+
+            <td>
+                <select  name="magic_skills[]">
+
+
+                    <option value="Alchemy">Alchemy</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Conjuror">Conjuror</option>
+                    <option value="Disintegration">Disintegration</option>
+                    <option value="Elemental">Elemental</option>
+                    <option value="Healing">Healing</option>
+                    <option value="Illusion">Illusion</option>
+                    <option value="Immortality">Immortality</option>
+                    <option value="Invisibility">Invisibility</option>
+                    <option value="Invulnerability">Invulnerability</option>
+                    <option value="Necromancer">Necromancer</option>
+                    <option value="Omnipresent">Omnipresent</option>
+                    <option value="Omniscient">Omniscient</option>
+                    <option value="Poison">Poison</option>
+                    <option value="Possession">Possession</option>
+                    <option value="Self-detonation">Self-detonation</option>
+                    <option value="Summoning">Summoning</option>
+                    <option value="Water breathing">Water breathing</option>
+                 </select>
+            </td>
+            <td>
+                <select  name="lvl[]">
+                    <option >{{student.existing_skills["level"]}}</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+
+                </select>
+
+            </td>
+
     </tr>
-    <!----- Last Name ---------------------------------------------------------->
-    <tr>
-    <td>Last Name</td>
-    <td><input type="text" name="Last_Name" maxlength="30" value="{{ student.last_name }}"/>
-    (max 30 characters a-z and A-Z)
-    </td>
-    </tr>
-    <!----- Last Name ---------------------------------------------------------->
-    <tr>
-        <td>Courses</td>
-      <td>
-    <select name="Course_Interest">
-        <option value="Alchemy basics">Alchemy basics</option>
-        <option value="Alchemy advanced">Alchemy advanced</option>
-        <option value="Magic for day-to-day life">Magic for day-to-day life</option>
-        <option value="Magic for medical professionals">Magic for medical professionals</option>
-        <option value="Dating with magic">Dating with magic</option>
+         <tr>
+
+        <td>
+      <select  name="magic_skills[]">
+            <option value="Alchemy">Alchemy</option>
+            <option value="Animation">Animation</option>
+            <option value="Conjuror">Conjuror</option>
+            <option value="Disintegration">Disintegration</option>
+            <option value="Elemental">Elemental</option>
+            <option value="Healing">Healing</option>
+            <option value="Illusion">Illusion</option>
+            <option value="Immortality">Immortality</option>
+            <option value="Invisibility">Invisibility</option>
+            <option value="Invulnerability">Invulnerability</option>
+            <option value="Necromancer">Necromancer</option>
+            <option value="Omnipresent">Omnipresent</option>
+            <option value="Omniscient">Omniscient</option>
+             <option value="Poison">Poison</option>
+             <option value="Possession">Possession</option>
+            <option value="Self-detonation">Self-detonation</option>
+             <option value="Summoning">Summoning</option>
+            <option value="Water breathing">Water breathing</option>
     </select>
         </td>
-    </tr>
-
-<tr>
-        <td>Magic skillz</td>
         <td>
-    <select multiple name="Magic_skillz[]">
+           <select  name="lvl[]">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+
+           </select>
+
+        </td>
+
+    </tr>
+         <tr>
+
+        <td>
+      <select  name="magic_skills[]">
+            <option value="Alchemy">Alchemy</option>
+            <option value="Animation">Animation</option>
+            <option value="Conjuror">Conjuror</option>
+            <option value="Disintegration">Disintegration</option>
+            <option value="Elemental">Elemental</option>
+            <option value="Healing">Healing</option>
+            <option value="Illusion">Illusion</option>
+            <option value="Immortality">Immortality</option>
+            <option value="Invisibility">Invisibility</option>
+            <option value="Invulnerability">Invulnerability</option>
+            <option value="Necromancer">Necromancer</option>
+            <option value="Omnipresent">Omnipresent</option>
+            <option value="Omniscient">Omniscient</option>
+             <option value="Poison">Poison</option>
+             <option value="Possession">Possession</option>
+            <option value="Self-detonation">Self-detonation</option>
+             <option value="Summoning">Summoning</option>
+            <option value="Water breathing">Water breathing</option>
+    </select>
+        </td>
+        
+        <td>
+           <select  name="lvl[]">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+
+           </select>
+
+        </td>
+
+    </tr>
+         <tr>
+
+        <td>
+      <select  name="magic_skills[]">
+            <option value="Alchemy">Alchemy</option>
+            <option value="Animation">Animation</option>
+            <option value="Conjuror">Conjuror</option>
+            <option value="Disintegration">Disintegration</option>
+            <option value="Elemental">Elemental</option>
+            <option value="Healing">Healing</option>
+            <option value="Illusion">Illusion</option>
+            <option value="Immortality">Immortality</option>
+            <option value="Invisibility">Invisibility</option>
+            <option value="Invulnerability">Invulnerability</option>
+            <option value="Necromancer">Necromancer</option>
+            <option value="Omnipresent">Omnipresent</option>
+            <option value="Omniscient">Omniscient</option>
+             <option value="Poison">Poison</option>
+             <option value="Possession">Possession</option>
+            <option value="Self-detonation">Self-detonation</option>
+             <option value="Summoning">Summoning</option>
+            <option value="Water breathing">Water breathing</option>
+    </select>
+        </td>
+        
+        <td>
+           <select  name="lvl[]">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+
+           </select>
+
+        </td>
+
+    </tr>
+         <tr class="border_bottom">
+
+        <td>
+      <select  name="magic_skills[]">
+            <option value="Alchemy">Alchemy</option>
+            <option value="Animation">Animation</option>
+            <option value="Conjuror">Conjuror</option>
+            <option value="Disintegration">Disintegration</option>
+            <option value="Elemental">Elemental</option>
+            <option value="Healing">Healing</option>
+            <option value="Illusion">Illusion</option>
+            <option value="Immortality">Immortality</option>
+            <option value="Invisibility">Invisibility</option>
+            <option value="Invulnerability">Invulnerability</option>
+            <option value="Necromancer">Necromancer</option>
+            <option value="Omnipresent">Omnipresent</option>
+            <option value="Omniscient">Omniscient</option>
+             <option value="Poison">Poison</option>
+             <option value="Possession">Possession</option>
+            <option value="Self-detonation">Self-detonation</option>
+             <option value="Summoning">Summoning</option>
+            <option value="Water breathing">Water breathing</option>
+    </select>
+        </td>
+        
+        <td>
+           <select  name="lvl[]">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+
+           </select>
+
+        </td>
+
+    </tr>
+    <tr class="border_bottom">
+
+
+
+           <td>Desired Skills</td>
+        <td>
+      <select class="select_desired_skills"multiple name="desired_skills[]">
       <option value="Alchemy">Alchemy</option>
       <option value="Animation">Animation</option>
       <option value="Conjuror">Conjuror</option>
@@ -63,38 +263,15 @@
         </td>
     </tr>
 
-           <td>Desired skillz</td>
-        <td>
-    <select multiple name="Desired_skillz[]">
-      <option value="Alchemy">Alchemy</option>
-      <option value="Animation">Animation</option>
-      <option value="Conjuror">Conjuror</option>
-      <option value="Disintegration">Disintegration</option>
-        <option value="Elemental">Elemental</option>
-        <option value="Healing">Healing</option>
-        <option value="Illusion">Illusion</option>
-        <option value="Immortality">Immortality</option>
-        <option value="Invisibility">Invisibility</option>
-        <option value="Invulnerability">Invulnerability</option>
-        <option value="Necromancer">Necromancer</option>
-        <option value="Omnipresent">Omnipresent</option>
-        <option value="Omniscient">Omniscient</option>
-        <option value="Poison">Poison</option>
-        <option value="Possession">Possession</option>
-        <option value="Self-detonation">Self-detonation</option>
-        <option value="Summoning">Summoning</option>
-        <option value="Water breathing">Water breathing</option>
-    </select>
-        </td>
-    </tr>
-    <!----- Submit and Reset ------------------------------------------------->
+
+
+
     <tr>
     <td colspan="2" align="center">
     <input type="submit" value="Submit">
     </td>
     </tr>
     </table>
-    <input type="submit" value="Update" />
 </form>
 </body>
 </html>
