@@ -1,51 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/c.css') }}">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  {% extends 'index.html' %} {% block body %}
 
-</head>
-
-{% extends 'index.html' %} {% block body %}
-
-<div>
   <div>
-  <a href="./edit_student">Edit Student</a>
-  <a href="/add_student">Add Student</a>
+    <div>
+      <a href="/add_student">Add Student</a>
+    </div>
+    <h1 id="list_title">Hogwarts Student List</h1>
+  </div>
 
-</div>
-  <h1 id="list_title">Hogwarts Student List</h1>
+  <table>
+    <tr>
+      <th id="id">ID</th>
+      <th>First Lame</th>
+      <th>Last Name</th>
+      <th>Creation Time</th>
+      <th>Existing Skills</th>
+      <th>Desired Skills</th>
+      <th>Course Interest</th>
+    </tr>
 
-</div>
+    {% for student in students_list %}
 
-<table>
-  <tr>
-    <th id="id">ID</th>
-    <th>First Lame</th>
-    <th>Last Name</th>
-    <th>Creation Time</th>
-    <th>Existing Skills</th>
-    <th>Desired Skills</th>
-    <th>Course Interest</th>
-  </tr>
+    <tr>
+      <td><a href="/students/{{student.id}}">{{student.id}}</a></td>
+      <td>{{student.first_name}}</td>
+      <td>{{student.last_name}}</td>
+      <td>{{student.creation_time}}</td>
+      <td>
+        <ol>
+          {% for skill in student.existing_skills %}
+          <li>{{skill}}</li>
 
-  {% for student in students_list %}
+          {% endfor %}
+        </ol>
+      </td>
+      <td>
+        <ol>
+          {% for skill in student.desired_skills %}
+          <li>{{skill}}</li>
 
-  <tr>
-    <td><a href="/students/{{student.id}}" >{{student.id}}</a></td>
-    <td>{{student.first_name}}</td>
-    <td>{{student.last_name}}</td>
-   <td>{{student.creation_time}}</td>
-   <td>{{student.existing_skills}}</td>
-   <td>{{student.desired_skills}}</td>
-<td>{{student.course_interest}}</td> 
-  </tr>
-<script src="{{url_for('static', filename='css/please.js')}}"></script>
+          {% endfor %}
+        </ol>
+      </td>
+      <td>
+        <ol>
+          {% for course in student.course_interest %}
+          <li>{{course}}</li>
 
-  {% endfor %} {% endblock %}
-</table>
+          {% endfor %}
+        </ol>
+      </td>
+    </tr>
+    <script src="{{url_for('static', filename='css/please.js')}}"></script>
+
+    {% endfor %} {% endblock %}
+  </table>
+</html>

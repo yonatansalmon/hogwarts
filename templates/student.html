@@ -1,11 +1,16 @@
 
 <body>
-
-<ul>
+<a href="/">Student List</a>
+<ul style="list-style-type:none">
     <li>{{student.id}}</li>
-    <li>{{student.first_name}}</li>
-    <li>{{ student.last_name }}</li>
-</ul>
+    <li><b>First Name</b>: {{student.first_name}}</li>
+    <li><b>Last Name</b>: {{student.last_name }}</li>
+    <li><b>Creation Time</b>: {{student.creation_time }}</li>
+    <li><b>Existing Skills</b>: {{student.existing_skills }}</li>
+    <li><b>Desired Skills</b>: {{student.desired_skills }}</li>
+    <li><b>Course Interest</b>: {{student.course_interest}}</li>
 
+</ul>
+<a href="/students/{{ student.id }}/edit" >Edit</a>
 </body>
 </html>

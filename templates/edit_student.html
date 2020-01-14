@@ -1,9 +1,100 @@
-{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/">Students table</a>
+<h1>Edit student</h1>
+<form action="edit" method="post">
+    <table align="center" cellpadding = "10">
+    <!----- First Name ---------------------------------------------------------->
+    <tr>
+    <td>First Name</td>
+    <td><input type="text" name="First_Name" maxlength="30" value="{{ student.first_name }}"/>
+    (max 30 characters a-z and A-Z)
+    </td>
+    </tr>
+    <!----- Last Name ---------------------------------------------------------->
+    <tr>
+    <td>Last Name</td>
+    <td><input type="text" name="Last_Name" maxlength="30" value="{{ student.last_name }}"/>
+    (max 30 characters a-z and A-Z)
+    </td>
+    </tr>
+    <!----- Last Name ---------------------------------------------------------->
+    <tr>
+        <td>Courses</td>
+      <td>
+    <select name="Course_Interest">
+        <option value="Alchemy basics">Alchemy basics</option>
+        <option value="Alchemy advanced">Alchemy advanced</option>
+        <option value="Magic for day-to-day life">Magic for day-to-day life</option>
+        <option value="Magic for medical professionals">Magic for medical professionals</option>
+        <option value="Dating with magic">Dating with magic</option>
+    </select>
+        </td>
+    </tr>
 
-{% block body %}
+<tr>
+        <td>Magic skillz</td>
+        <td>
+    <select multiple name="Magic_skillz[]">
+      <option value="Alchemy">Alchemy</option>
+      <option value="Animation">Animation</option>
+      <option value="Conjuror">Conjuror</option>
+      <option value="Disintegration">Disintegration</option>
+        <option value="Elemental">Elemental</option>
+        <option value="Healing">Healing</option>
+        <option value="Illusion">Illusion</option>
+        <option value="Immortality">Immortality</option>
+        <option value="Invisibility">Invisibility</option>
+        <option value="Invulnerability">Invulnerability</option>
+        <option value="Necromancer">Necromancer</option>
+        <option value="Omnipresent">Omnipresent</option>
+        <option value="Omniscient">Omniscient</option>
+        <option value="Poison">Poison</option>
+        <option value="Possession">Possession</option>
+        <option value="Self-detonation">Self-detonation</option>
+        <option value="Summoning">Summoning</option>
+        <option value="Water breathing">Water breathing</option>
+    </select>
+        </td>
+    </tr>
 
-<form action="/students/{{ student.id }}/edit" method="POST">
-  <input type="text" name="last_name" value={{student.last_name}}>
-  <input type="submit" value="Submit">
+           <td>Desired skillz</td>
+        <td>
+    <select multiple name="Desired_skillz[]">
+      <option value="Alchemy">Alchemy</option>
+      <option value="Animation">Animation</option>
+      <option value="Conjuror">Conjuror</option>
+      <option value="Disintegration">Disintegration</option>
+        <option value="Elemental">Elemental</option>
+        <option value="Healing">Healing</option>
+        <option value="Illusion">Illusion</option>
+        <option value="Immortality">Immortality</option>
+        <option value="Invisibility">Invisibility</option>
+        <option value="Invulnerability">Invulnerability</option>
+        <option value="Necromancer">Necromancer</option>
+        <option value="Omnipresent">Omnipresent</option>
+        <option value="Omniscient">Omniscient</option>
+        <option value="Poison">Poison</option>
+        <option value="Possession">Possession</option>
+        <option value="Self-detonation">Self-detonation</option>
+        <option value="Summoning">Summoning</option>
+        <option value="Water breathing">Water breathing</option>
+    </select>
+        </td>
+    </tr>
+    <!----- Submit and Reset ------------------------------------------------->
+    <tr>
+    <td colspan="2" align="center">
+    <input type="submit" value="Submit">
+    </td>
+    </tr>
+    </table>
+    <input type="submit" value="Update" />
 </form>
-{% endblock %}
+</body>
+</html>
