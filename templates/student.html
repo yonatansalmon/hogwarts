@@ -3,7 +3,7 @@
 {% extends 'index.html' %}
 
   {% block body %}
-<button><a href="/">Student List</a></button>
+<div class="link_container"><a class="link" href="/">Student List</a></div>
 
 <div id="one_student_container">
 
@@ -57,7 +57,7 @@
 </table>
 </div>
 <div class="btn">
-<button ><a href="/students/{{ student.id }}/edit" >Edit</a></button>
+<div class="link_container" ><a  class="link" href="/students/{{ student.id }}/edit" >Edit</a></div>
 </div>
   {% endblock %}
 </html>

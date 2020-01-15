@@ -29,7 +29,6 @@
             <td>Courses</td>
             <td>
                 <select name="Course_Interest">
-                     <option value="Alchemy basics">{{student.course_interest[0]}}</option>
                     <option value="Alchemy basics">Alchemy Basics</option>
                     <option value="Alchemy advanced">Alchemy Advanced</option>
                     <option value="Magic for day-to-day life">Magic For Day-To-Day Life</option>
@@ -48,7 +47,7 @@
             <td>
                 <select  name="magic_skills[]">
 
-
+                    <option class="prev_option" >{{student.existing_skills[0].skill}}</option>
                     <option value="Alchemy">Alchemy</option>
                     <option value="Animation">Animation</option>
                     <option value="Conjuror">Conjuror</option>
@@ -71,7 +70,7 @@
             </td>
             <td>
                 <select  name="lvl[]">
-                    <option >{{student.existing_skills["level"]}}</option>
+                    <option class="prev_option" >{{student.existing_skills[0].level}}</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -87,6 +86,8 @@
 
         <td>
       <select  name="magic_skills[]">
+          <option class="prev_option" >{{student.existing_skills[1].skill}}</option>
+
             <option value="Alchemy">Alchemy</option>
             <option value="Animation">Animation</option>
             <option value="Conjuror">Conjuror</option>
@@ -109,6 +110,8 @@
         </td>
         <td>
            <select  name="lvl[]">
+            <option class="prev_option" >{{student.existing_skills[1].level}}</option>
+
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -124,6 +127,7 @@
 
         <td>
       <select  name="magic_skills[]">
+           <option class="prev_option" >{{student.existing_skills[2].skill}}</option>
             <option value="Alchemy">Alchemy</option>
             <option value="Animation">Animation</option>
             <option value="Conjuror">Conjuror</option>
@@ -147,6 +151,8 @@
         
         <td>
            <select  name="lvl[]">
+            <option class="prev_option" >{{student.existing_skills[2].level}}</option>
+
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -162,6 +168,7 @@
 
         <td>
       <select  name="magic_skills[]">
+        <option class="prev_option" >{{student.existing_skills[3].skill}}</option>
             <option value="Alchemy">Alchemy</option>
             <option value="Animation">Animation</option>
             <option value="Conjuror">Conjuror</option>
@@ -185,6 +192,8 @@
         
         <td>
            <select  name="lvl[]">
+            <option class="prev_option" >{{student.existing_skills[3].level}}</option>
+
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -200,6 +209,7 @@
 
         <td>
       <select  name="magic_skills[]">
+        <option class="prev_option" >{{student.existing_skills[4].skill}}</option>
             <option value="Alchemy">Alchemy</option>
             <option value="Animation">Animation</option>
             <option value="Conjuror">Conjuror</option>
@@ -223,6 +233,8 @@
         
         <td>
            <select  name="lvl[]">
+            <option class="prev_option" >{{student.existing_skills[4].level}}</option>
+
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

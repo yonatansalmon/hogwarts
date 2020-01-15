@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div id="chartContainer_existing" style="height: 300px; width: 100%;"></div>
+    <div id="chartContainer_desired" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+     <script>
+
+
+      window.onload = function() {
+
+      datapoints_existing = {{ counts_existing|tojson }}
+
+      var chart_existing_skills = new CanvasJS.Chart("chartContainer_existing", {
+      	animationEnabled: true,
+      	title: {
+      		text: "Students' Existing Skills"
+      	},
+      	data: [{
+      		type: "pie",
+      		startAngle: 240,
+      		yValueFormatString: "##0\"\"",
+      		indexLabel: "{label} {y}",
+      		dataPoints: datapoints_existing,
+
+      	}]
+      });
+
+
+      chart_existing_skills.render();
+
+      datapoints_desired = {{counts_desired|tojson }}
+
+      var chart_desired_skills = new CanvasJS.Chart("chartContainer_desired", {
+      	animationEnabled: true,
+      	title: {
+      		text: "Students' Desired Skills"
+      	},
+      	data: [{
+      		type: "pie",
+      		startAngle: 240,
+      		yValueFormatString: "##0\"\"",
+      		indexLabel: "{label} {y}",
+      		dataPoints: datapoints_desired,
+
+      	}]
+      });
+
+      chart_desired_skills.render();
+      }
+    </script>
+  </body>
+</html>

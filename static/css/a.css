@@ -1,5 +1,6 @@
 body{
   background-image: url("https://ae01.alicdn.com/kf/HTB1Q4Q3ax2rK1RkSnhJq6ykdpXax/Harry-Potter-Magician-s-Duel-Staircase-backdrop-High-quality-Computer-print-party-photography-studio-background.jpg");
+  font-family: 'Indie Flower', cursive;
 }
 
 th{
@@ -57,6 +58,10 @@ td{
   padding: 10px;
 }
 
+select{
+  background-color: beige;
+  font-family: 'Indie Flower', cursive;
+}
 
 .name_td{
 text-align: center;
@@ -71,7 +76,7 @@ padding-left:50px;
 }
 
   table{
-    font-family: Calibri; 
+    font-family: 'Indie Flower', cursive;
     color:white; 
     font-size: 11pt; 
     font-style: normal;
@@ -90,10 +95,12 @@ padding-left:50px;
   }
   #registration_form{
     text-align: center;
+    color:white;
   }
 ol{
   list-style-type: none;
   padding: 15px;
+  width:105px
 }
 
 .one_student_list{
@@ -107,10 +114,7 @@ ol{
   justify-content: center;
   align-items: center;
 }
-.level_label{
 
-
-}
 
 
 
@@ -125,7 +129,7 @@ ol{
 
   #first_name_data{
     text-align: center;
-    width: 200px;
+    width: 90px;
   }
 
   #course_interest {
@@ -146,4 +150,31 @@ ol{
 
   #center_id {
     text-align: center;
+    font-size: 22px;
+  }
+
+  button {
+    width: 100px;
+    height: 50px;
+    margin: 10px 0px;
+  }
+
+  .link{
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .link_container{
+    width: 120px;
+    height: 50px;
+    margin: 10px 0px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .prev_option{
+    color: red;
   }
