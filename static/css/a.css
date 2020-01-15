@@ -1,6 +1,11 @@
 body{
   background-image: url("https://ae01.alicdn.com/kf/HTB1Q4Q3ax2rK1RkSnhJq6ykdpXax/Harry-Potter-Magician-s-Duel-Staircase-backdrop-High-quality-Computer-print-party-photography-studio-background.jpg");
   font-family: 'Indie Flower', cursive;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+  color: white;
 }
 
 th{
@@ -166,15 +171,44 @@ ol{
 
   .link_container{
     width: 120px;
-    height: 50px;
-    margin: 10px 0px;
+    height: 30px;
     background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 25px;
+    margin-bottom: 10px;
+
 
   }
 
   .prev_option{
     color: red;
+  }
+
+
+  #edit_title{
+    text-align: center;
+  }
+
+  .button_position{
+    display: flex
+  }
+
+  #student_stats_button{
+    width: 139px;
+  }
+
+  .chart{
+
+  }
+
+  .chart_display {
+
+  }
+
+  .canvasjs-chart-canvas{
+    position: relative !important;
+    height: 500px !important;
+    width: 500px !important;
   }

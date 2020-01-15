@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+	<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/a.css') }}"
+  />
+</head>
 
   </head>
   <body>
-    <div id="chartContainer_existing" style="height: 300px; width: 100%;"></div>
-    <div id="chartContainer_desired" style="height: 300px; width: 100%;"></div>
+	<div class="button_position">
+	<div class="link_container"><a class="link" href="/add_student">Add Student</a></div>
+	<div class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></div>
+  </div>
+
+ <table>
+
+	<tr>
+
+    <td><div id="chartContainer_existing" class="chart"></div></td>
+	<td><div id="chartContainer_desired" class="chart"></div></td>
+</tr>
+
+</table>
+	
+</div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-     <script>
+	 
+	 <script>
 
 
       window.onload = function() {

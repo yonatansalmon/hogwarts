@@ -91,18 +91,22 @@ def student_stats():
             existing_skills.append(student_skills)
         for skill in dskills:
             desired_skills.append(skill)
-
     existing_list = []
     for skill in magic_skills:
         count = existing_skills.count(skill)
         if count:
             existing_list.append({'y': count, 'label': skill})
-
     desired_list = []
     for skill in magic_skills:
         count = desired_skills.count(skill)
         if count:
             desired_list.append({'y': count, 'label': skill})
+    months = []
+    for month in student:
+        ctime = month["creation_time"].split()[0]
+        print(ctime)
+
+
 
 
     return render_template("student_stats.html",student_list=student_list,counts_existing=existing_list,counts_desired=desired_list)
