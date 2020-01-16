@@ -1,7 +1,7 @@
 import threading
 import time
 from flask import Flask, jsonify, render_template, request, redirect, url_for
-from student_list import students, courses, labels, colors, magic_skills
+from student_list import students, courses, labels, colors, magic_skills, days, months
 
 count = 5
 
@@ -82,6 +82,12 @@ def student_stats():
     student_list = students
     existing_skills = []
     desired_skills = []
+    existing_list = []
+    desired_list = []
+    day_stats = []
+    day_list = []
+    month_stats = []
+    month_list = []
     student = [student for student in student_list]
     for skill in student:
         eskills = skill["existing_skills"]
@@ -91,25 +97,31 @@ def student_stats():
             existing_skills.append(student_skills)
         for skill in dskills:
             desired_skills.append(skill)
-    existing_list = []
     for skill in magic_skills:
-        count = existing_skills.count(skill)
-        if count:
-            existing_list.append({'y': count, 'label': skill})
-    desired_list = []
+        count_existing = existing_skills.count(skill)
+        if count_existing:
+            existing_list.append({'y': count_existing, 'label': skill})
     for skill in magic_skills:
-        count = desired_skills.count(skill)
-        if count:
-            desired_list.append({'y': count, 'label': skill})
-    months = []
-    for month in student:
-        ctime = month["creation_time"].split()[0]
-        print(ctime)
+        count_desired = desired_skills.count(skill)
+        if count_desired:
+            desired_list.append({'y': count_desired, 'label': skill})
 
 
+    for added in student:
+        cday = added["creation_time"].split()[0]
+        cmonth = added["creation_time"].split()[1]
+        day_stats.append(cday)
+        month_stats.append(cmonth)
+    for current_day in days:
+        count_day = day_stats.count(current_day)
+        day_list.append({"y": count_day, "label": current_day})
+    for current_month in months:
+        count_month = month_stats.count(current_month)
+        month_list.append({"y": count_month, "label": current_month})
 
 
-    return render_template("student_stats.html",student_list=student_list,counts_existing=existing_list,counts_desired=desired_list)
+    return render_template("student_stats.html", counts_existing=existing_list,
+                           counts_desired=desired_list, counts_day=day_list, counts_month=month_list)
 
 
 @app.after_request

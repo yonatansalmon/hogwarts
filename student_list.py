@@ -6,6 +6,10 @@ magic_skills = ["Alchemy", "Animation", "Conjuror", "Disintegration", "Elemental
                 "Self-detonation", "Summoning", "Water-breathing"]
 level = [1, 2, 3, 4, 5]
 
+days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+months =["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
 courses = ["Alchemy basics", "Alchemy advanced", "Magic for day-to-day life", "Magic for medical professionals",
            "Dating with magic", ]
 

@@ -1,214 +1,254 @@
-body{
+body {
   background-image: url("https://ae01.alicdn.com/kf/HTB1Q4Q3ax2rK1RkSnhJq6ykdpXax/Harry-Potter-Magician-s-Duel-Staircase-backdrop-High-quality-Computer-print-party-photography-studio-background.jpg");
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
   background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: cover;
+  background-size: cover ;
   color: white;
+  margin: 0px;
 }
 
-th{
+th {
   text-align: center;
   font-size: 22px;
 }
 
-#existing_skills_cell{
+#existing_skills_cell {
   width: 300px;
 }
-#id{
+#id {
   color: red;
 }
 
-.btn{
+.btn {
   display: flex;
   justify-content: center;
 }
 
-.border_bottom{
+.border_bottom {
   border-bottom: 1px solid black;
 }
-.select_desired_skills{
+.select_desired_skills {
   width: 118px;
   height: 149px;
   font-size: 14px;
   text-align: center;
   color: #9e9eff;
   background-color: black;
-
 }
 
-h3{
-    font-family: Calibri;
-    color:blue;
-    font-size: 25pt;         
-    font-style: normal; 
-    font-weight: bold; 
-    color:SlateBlue;
-    text-align: center;
-    text-decoration: underline
-  }
-
-
-#one_student{
-    text-align: left;
-    align-self: center;
-    list-style-position: inside;
-    width: 90vw;
-    
-
+h3 {
+  font-family: Calibri;
+  color: blue;
+  font-size: 25pt;
+  font-style: normal;
+  font-weight: bold;
+  color: SlateBlue;
+  text-align: center;
+  text-decoration: underline;
 }
 
-td{
+#one_student {
+  text-align: left;
+  align-self: center;
+  list-style-position: inside;
+  width: 90vw;
+}
+
+td {
   padding: 10px;
 }
 
-select{
+select {
   background-color: beige;
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
 }
 
-.name_td{
-text-align: center;
-padding-left:50px;
-
-
+.name_td {
+  text-align: center;
+  padding-left: 50px;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
 }
 
-  table{
-    font-family: 'Indie Flower', cursive;
-    color:white; 
-    font-size: 11pt; 
-    font-style: normal;
-    font-weight: bold;
-    text-align: left;
-    list-style-position: inside;
-    list-style-type: none;
-    background-color: SlateBlue; 
-    border-collapse: collapse; 
-    border: 2px solid navy;
-    align-self: center;
-
-  }
-  table.inner{
-    border: 5px
-  }
-  #registration_form{
-    text-align: center;
-    color:white;
-  }
-ol{
+table {
+  font-family: "Indie Flower", cursive;
+  color: white;
+  font-size: 11pt;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  list-style-position: inside;
+  list-style-type: none;
+  background-color: SlateBlue;
+  border-collapse: collapse;
+  border: 2px solid navy;
+  align-self: center;
+}
+table.inner {
+  border: 5px;
+}
+#registration_form {
+  text-align: center;
+  color: white;
+}
+ol {
   list-style-type: none;
   padding: 15px;
-  width:105px
+  width: 105px;
 }
 
-.one_student_list{
-
+.one_student_list {
   text-align: center;
-  padding:20px; 
+  padding: 20px;
 }
 
-#one_student_container{
+#one_student_container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+#list_title {
+  text-align: center;
+}
 
+#last_name_data {
+  text-align: center;
+}
 
+#first_name_data {
+  text-align: center;
+  width: 90px;
+}
 
+#course_interest {
+  width: 250px;
+}
 
-  #list_title{
-      text-align: center;
-  }
+#first_name {
+  width: 300px;
+}
 
-  #last_name_data{
-    text-align: center;
-  }
+#desired_skills {
+  width: 110px;
+}
 
-  #first_name_data{
-    text-align: center;
-    width: 90px;
-  }
+#id_title {
+  width: 80px;
+}
 
-  #course_interest {
-    width: 250px;
-  }
+#center_id {
+  text-align: center;
+  font-size: 22px;
+}
 
-  #first_name{
-    width: 300px;
-  }
+button {
+  width: 100px;
+  height: 50px;
+  margin: 10px 0px;
+}
 
-  #desired_skills{
-    width: 110px;
-  }
+.link {
+  font-size: 20px;
+  text-decoration: none;
+}
 
-  #id_title{
-    width: 80px;
-  }
+.link_container {
+  width: 120px;
+  height: 30px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
 
-  #center_id {
-    text-align: center;
-    font-size: 22px;
-  }
+.prev_option {
+  color: red;
+}
 
-  button {
-    width: 100px;
-    height: 50px;
-    margin: 10px 0px;
-  }
+#edit_title {
+  text-align: center;
+}
 
-  .link{
-    font-size: 20px;
-    text-decoration: none;
-  }
+.button_position {
+  display: flex;
+  justify-content: center;
+}
 
-  .link_container{
-    width: 120px;
-    height: 30px;
-    background-color: red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 25px;
-    margin-bottom: 10px;
+#student_stats_button {
+  width: 139px;
+}
 
+.chart {
+  height: 509px;
+}
 
-  }
+.chart_display {
+}
 
-  .prev_option{
-    color: red;
-  }
+.chart1 .canvasjs-chart-container {
+  height: 400px !important;
+  width: 500px !important;
+ 
+}
+.chart2 .canvasjs-chart-container {
+  height: 400px !important;
+  width: 500px !important;
 
+}
+.chart3 .canvasjs-chart-container {
+  height: 500px !important;
+  width: 500px !important;
 
-  #edit_title{
-    text-align: center;
-  }
+}
+.chart4 .canvasjs-chart-container {
+  height: 500px !important;
+  width: 500px !important;
 
-  .button_position{
-    display: flex
-  }
+}
 
-  #student_stats_button{
-    width: 139px;
-  }
-
-  .chart{
-
-  }
-
-  .chart_display {
-
-  }
-
-  .canvasjs-chart-canvas{
+/* .canvasjs-chart-canvas{
     position: relative !important;
     height: 500px !important;
     width: 500px !important;
-  }
+  } */
+
+.canvasjs-chart-container {
+  /* display: none !important; */
+}
+
+.chart_container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.canvasjs-chart-credit {
+  position: relative;
+}
+
+#chartContainer_existing{
+  margin: 10px;
+}
+
+#chartContainer_desired{
+  margin: 10px;
+}
+
+#chartContainer_day{
+  margin: 10px;
+}
+
+#chartContainer_month{
+  margin: 10px;
+}
+
+#stats_header{
+  text-align: center;
+}
+
