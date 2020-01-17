@@ -28,7 +28,13 @@ def add_students():
         for i in range(len(magic_skills)):
             magic_skills[i]["level"] = level[i]
         desired_skills = request.form.getlist('desired_skills[]')
-        last_id = int(students_list[-1]["id"] + 1)
+
+        try:
+            last_id = int(students_list[-1]["id"] + 1)
+        except IndexError:
+            last_id = 1
+
+
         students_list.append({"id": last_id,
                               "first_name": fname,
                               "last_name": lname,
@@ -77,6 +83,8 @@ def get_student2(id):
         return render_template("student_edit.html", student=student)
 
 
+
+
 @app.route("/student_stats", methods=["GET"])
 def student_stats():
     student_list = students
@@ -123,6 +131,14 @@ def student_stats():
     return render_template("student_stats.html", counts_existing=existing_list,
                            counts_desired=desired_list, counts_day=day_list, counts_month=month_list)
 
+
+
+@app.route("/students/<int:id>/delete", methods=["GET"])
+def delete_student(id):
+    student_list = students
+    student = [student for student in student_list if student['id'] == id]
+    student_list.remove(student[0])
+    return redirect('/')
 
 @app.after_request
 def add_header(r):

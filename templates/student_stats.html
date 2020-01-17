@@ -1,159 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<link
-    rel="stylesheet"
-    href="{{ url_for('static', filename='css/a.css') }}"
-  />
-</head>
-
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
   </head>
-  <body>
-	  <h1 id="stats_header">Student's Stats</h1>
+
+
+ <body>
+	<h1 id="stats_header">Student's Stats</h1>
 	<div class="button_position">
 		<div class="link_container"><a class="link" href="/">Student List</a></div class="link-container">
+    	<div class="link_container"><a class="link" href="/add_student">Add Student</a></div>
+    </div>
 
-	<div class="link_container"><a class="link" href="/add_student">Add Student</a></div>
-  </div>
+	<div class = "chart_container">
+		<div id="chartContainer_existing" class="chart1"></div>
+		<div id="chartContainer_desired" class="chart2"></div>
+	</div>
 
-
-
-<div class = "chart_container">
-	<div id="chartContainer_existing" class="chart1"></div>
-	<div id="chartContainer_desired" class="chart2"></div>
-</div>
-
-<div class = "chart_container">
+	<div class = "chart_container">
          <div id="chartContainer_day" class="chart3"></div>
 		 <div id="chartContainer_month" class="chart4"></div>
-<div>
-
-
-
-
-
-
+	<div>
 	
-</div>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<script src="{{url_for('static', filename='css/charts.js')}}"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+	 var datapoints_existing = {{ counts_existing|tojson }}
+	 var datapoints_desired = {{counts_desired|tojson }}
+	 var datapoints_day = {{ counts_day|tojson }}
+	 var datapoints_month = {{counts_month|tojson}}
+</script>
 	 
-	 <script>
-
-
-      window.onload = function() {
-
-      datapoints_existing = {{ counts_existing|tojson }}
-
-      var chart_existing_skills = new CanvasJS.Chart("chartContainer_existing", {
-      	animationEnabled: true,
-		  backgroundColor: "#F5DEB3", 
-      	title: {
-      		text: "Students' Existing Skills"
-      	},
-      	 toolTip:{
-   			enabled: false,
- },
-      	data: [{
-      		type: "pie",
-      		startAngle: 240,
-      		yValueFormatString: "##0\"\"",
-      		indexLabel: "{label} {y}",
-			indexLabelFontSize: 11,
-			
-      		dataPoints: datapoints_existing,
-
-      	}]
-      });
-
-
-      chart_existing_skills.render();
-
-      datapoints_desired = {{counts_desired|tojson }}
-
-      var chart_desired_skills = new CanvasJS.Chart("chartContainer_desired", {
-      	animationEnabled: true,
-		  
-		backgroundColor: "#F5DEB3", 
-      	title: {
-      		text: "Students' Desired Skills"
-      	},
-      	 toolTip:{
-   enabled: false,
- },
-      	data: [{
-      		type: "pie",
-      		startAngle: 240,
-      		yValueFormatString: "##0\"\"",
-      		indexLabel: "{label} {y}",
-      		dataPoints: datapoints_desired,
-			indexLabelFontSize: 9,
-
-      	}]
-      });
-
-      chart_desired_skills.render();
-
-
-     datapoints_day = {{ counts_day|tojson }}
-
-
-      var chart_day = new CanvasJS.Chart("chartContainer_day", {
-	animationEnabled: true,
-	theme: "light2", // "light1", "light2", "dark1", "dark2"
-	title:{
-		text: "Students Added Per Day"
-	},
-	backgroundColor: "#F5DEB3", 
-	 toolTip:{
-   enabled: false,
- },
-	axisY: {
-		title: "Students"
-	},
-		axisX: {
-		title: "Day"
-	},
-	data: [{
-		type: "column",
-		dataPoints: datapoints_day
 	
-	}]
-});
-chart_day.render();
-
-  datapoints_month = {{counts_month|tojson}}
-
-      var chart_month = new CanvasJS.Chart("chartContainer_month", {
-	animationEnabled: true,
-	theme: "light2", // "light1", "light2", "dark1", "dark2"
-	title:{
-		text: "Students Added Per Month"
-	},
-	backgroundColor: "#F5DEB3", 
-	axisY: {
-		title: "Students",
-		interval: 1
-	},
-	axisX: {
-		title: "Month"
-	},
- toolTip:{
-   enabled: false,
- },
-	data: [{
-		type: "column",
-		legendText: "Month",
-		dataPoints: datapoints_month
-
-	}]
-});
-chart_month.render();
-
-
-      }
-
-
-
-    </script>
 ̀  </body>
 </html>

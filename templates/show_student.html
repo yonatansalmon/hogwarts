@@ -24,10 +24,10 @@
         <th id="id_title">ID</th>
         <th id="first_name_student">First Lame</th>
         <th>Last Name</th>
-        <th>Creation Time</th>
         <th>Existing Skills</th>
         <th>Desired Skills</th>
         <th >Course Interest</th>
+        <th>Creation Time</th>
       </tr>
 
       {% for student in students_list %}
@@ -36,7 +36,7 @@
         <td id="center_id"><a id="id" href="/students/{{student.id}}">{{student.id}}</a></td>
         <td id="first_name_data" class="name_font">{{student.first_name}}</td>
         <td id="last_name_data" class="name_font">{{student.last_name}}</td>
-        <td class="student_color">{{student.creation_time}}</td>
+      
         <td>
           <ol class="student_color">
             {% for skill in student.existing_skills %}
@@ -61,10 +61,11 @@
             {% endfor %}
           </ol>
         </td>
+        <td class="student_color">{{student.creation_time}}</td>
       </tr>
 
       {% endfor %} {% endblock %}
     </table>
   </div>
-  <script src="{{url_for('static', filename='css/please.js')}}"></script>
+
 </html>

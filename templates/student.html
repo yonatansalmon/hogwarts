@@ -65,7 +65,9 @@
 </table>
 </div>
 <div class="btn">
-<div class="link_container" id="edit_button" ><a  class="link" href="/students/{{ student.id }}/edit" >Edit</a></div>
+  <div class="link_container" id="edit_button" ><a  class="link" href="/students/{{ student.id }}/edit" >Edit Student</a></div>
+  <div class="link_container" id="delete_button"  ><a class="link" id="delete_button_size" href="{{url_for('delete_student', id=student.id)}}">Delete Student</a></div>
+
 </div>
   {% endblock %}
 </html>

@@ -54,10 +54,6 @@ h3 {
   width: 90vw;
 }
 
-td {
-  padding: 10px;
-}
-
 select {
   background-color: beige;
   font-family: "Indie Flower", cursive;
@@ -87,6 +83,7 @@ table {
   border: 2px solid navy;
   align-self: center;
 }
+
 table.inner {
   border: 5px;
 }
@@ -94,6 +91,7 @@ table.inner {
   text-align: center;
   color: white;
 }
+
 ol {
   list-style-type: none;
   padding: 15px;
@@ -130,8 +128,6 @@ ol {
   margin-bottom: 4px;
   margin-top: 1px;
   font-size: 39px;
-
-
 }
 
 #last_name_data {
@@ -203,13 +199,21 @@ button {
 #student_stats_button {
   width: 139px;
 }
-
+̉
 .chart {
   height: 509px;
 }
 
 #edit_button{
   margin-top: 5px;
+}
+
+#delete_button{
+  margin-top: 5px;
+}
+
+#delete_button_size{
+  font-size: 18px;
 }
 
 .chart1 .canvasjs-chart-container {
@@ -231,16 +235,6 @@ button {
   height: 500px !important;
   width: 500px !important;
 
-}
-
-/* .canvasjs-chart-canvas{
-    position: relative !important;
-    height: 500px !important;
-    width: 500px !important;
-  } */
-
-.canvasjs-chart-container {
-  /* display: none !important; */
 }
 
 .chart_container {
