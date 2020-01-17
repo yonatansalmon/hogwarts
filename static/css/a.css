@@ -32,7 +32,7 @@ th {
   height: 149px;
   font-size: 14px;
   text-align: center;
-  color: #9e9eff;
+  color:#7af51f;
   background-color: black;
 }
 
@@ -103,6 +103,7 @@ ol {
 .one_student_list {
   text-align: center;
   padding: 20px;
+  color:#7af51f
 }
 
 #one_student_container {
@@ -111,8 +112,26 @@ ol {
   align-items: center;
 }
 
-#list_title {
+.list_title_show{
   text-align: center;
+  color: black;
+  font-family: "Indie Flower", cursive;
+  margin-bottom: 7px;
+  margin-top: 4px;
+  font-size: 39px;
+  color:#5eff55;
+  
+}
+
+.list_title_add{
+  text-align: center;
+  color: white;
+  font-family: "Indie Flower", cursive;
+  margin-bottom: 4px;
+  margin-top: 1px;
+  font-size: 39px;
+
+
 }
 
 #last_name_data {
@@ -178,6 +197,7 @@ button {
 .button_position {
   display: flex;
   justify-content: center;
+  margin-top: 8px;
 }
 
 #student_stats_button {
@@ -188,7 +208,8 @@ button {
   height: 509px;
 }
 
-.chart_display {
+#edit_button{
+  margin-top: 5px;
 }
 
 .chart1 .canvasjs-chart-container {
@@ -250,5 +271,19 @@ button {
 
 #stats_header{
   text-align: center;
+    font-size: 39px;
+    color: #18feff;
 }
 
+.name_font{
+  color: black;
+  font-size: 27px; 
+}
+
+.student_color{ 
+color:#7af51f}
+
+
+.header_color{
+  color: #ffde92
+}

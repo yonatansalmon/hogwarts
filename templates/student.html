@@ -3,13 +3,21 @@
 {% extends 'index.html' %}
 
   {% block body %}
-<div class="link_container"><a class="link" href="/">Student List</a></div>
+
+
+  <span class="button_position">
+    <div class="link_container"><a class="link" href="/">Student List</a></div class="link-container">
+        <span class="link_container"><a class="link" href="/add_student">Add Student</a></span>
+<span class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></span>
+
+</span>
+<h1 class="list_title_add">Student</h1>
 
 <div id="one_student_container">
 
 <table id="one_student">
 
-    <tr class="border_bottom">
+    <tr class="border_bottom header_color" >
         <th id="first_name">First Name</th>  
         <th>Last Name</th> 
         <th>Existing Skills</th>
@@ -18,8 +26,8 @@
           <th>Creation Time</th>
           <th>Last Update</th>
     </tr>
-      <td  class="one_student_list"> {{student.first_name}}</td>
-      <td  class="one_student_list"> {{student.last_name}}</td>
+      <td  class="one_student_list name_font" > {{student.first_name}}</td>
+      <td  class="one_student_list name_font"> {{student.last_name}}</td>
       <td id="existing_skills_cell" class="one_student_list">  
         <ol class="one_student_list">
         {% for skill in student.existing_skills %}
@@ -57,7 +65,7 @@
 </table>
 </div>
 <div class="btn">
-<div class="link_container" ><a  class="link" href="/students/{{ student.id }}/edit" >Edit</a></div>
+<div class="link_container" id="edit_button" ><a  class="link" href="/students/{{ student.id }}/edit" >Edit</a></div>
 </div>
   {% endblock %}
 </html>

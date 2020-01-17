@@ -12,7 +12,7 @@
     <div>
  
      
-      <h1 id="list_title">Hogwarts Student List</h1>
+      <h1 class="list_title_show">Hogwarts Student List</h1>
       <span class="button_position">
       <span class="link_container"><a class="link" href="/add_student">Add Student</a></span>
       <span class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></span>
@@ -20,7 +20,7 @@
     </div>
 
     <table>
-      <tr class="border_bottom">
+      <tr class="border_bottom header_color">
         <th id="id_title">ID</th>
         <th id="first_name_student">First Lame</th>
         <th>Last Name</th>
@@ -34,11 +34,11 @@
 
       <tr class="border_bottom">
         <td id="center_id"><a id="id" href="/students/{{student.id}}">{{student.id}}</a></td>
-        <td id="first_name_data">{{student.first_name}}</td>
-        <td id="last_name_data">{{student.last_name}}</td>
-        <td>{{student.creation_time}}</td>
+        <td id="first_name_data" class="name_font">{{student.first_name}}</td>
+        <td id="last_name_data" class="name_font">{{student.last_name}}</td>
+        <td class="student_color">{{student.creation_time}}</td>
         <td>
-          <ol>
+          <ol class="student_color">
             {% for skill in student.existing_skills %}
             <li>{{skill.skill}} {{skill.level}}</li>
 
@@ -46,7 +46,7 @@
           </ol>
         </td>
         <td>
-          <ol>
+          <ol class="student_color">
             {% for skill in student.desired_skills %}
             <li>{{skill}}</li>
 
@@ -54,7 +54,7 @@
           </ol>
         </td>
         <td>
-          <ol>
+          <ol class="student_color">
             {% for course in student.course_interest %}
             <li>{{course}}</li>
 
