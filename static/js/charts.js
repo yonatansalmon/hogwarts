@@ -15,7 +15,6 @@ window.onload = function() {
         yValueFormatString: '##0""',
         indexLabel: "{label} {y}",
         indexLabelFontSize: 11,
-
         dataPoints: datapoints_existing
       }
     ]
@@ -25,7 +24,6 @@ window.onload = function() {
 
   var chart_desired_skills = new CanvasJS.Chart("chartContainer_desired", {
     animationEnabled: true,
-
     backgroundColor: "#F5DEB3",
     title: {
       text: "Students' Desired Skills"
@@ -70,6 +68,7 @@ window.onload = function() {
       }
     ]
   });
+
   chart_day.render();
 
   var chart_month = new CanvasJS.Chart("chartContainer_month", {
@@ -97,5 +96,6 @@ window.onload = function() {
       }
     ]
   });
+  
   chart_month.render();
 };

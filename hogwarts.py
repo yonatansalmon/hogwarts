@@ -1,18 +1,14 @@
 import threading
 import time
 from flask import Flask, jsonify, render_template, request, redirect, url_for
-from student_list import students, courses, labels, colors, magic_skills, days, months
-
-count = 5
+from student_list import students, courses, magic_skills, days, months
 
 app = Flask(__name__)
-
 
 @app.route('/', methods=['GET'])
 def get_students():
     students_list = students
     return render_template('show_student.html', students_list=students_list)
-
 
 @app.route('/add_student', methods=['POST', 'GET'])
 def add_students():
@@ -28,13 +24,10 @@ def add_students():
         for i in range(len(magic_skills)):
             magic_skills[i]["level"] = level[i]
         desired_skills = request.form.getlist('desired_skills[]')
-
         try:
             last_id = int(students_list[-1]["id"] + 1)
         except IndexError:
             last_id = 1
-
-
         students_list.append({"id": last_id,
                               "first_name": fname,
                               "last_name": lname,
@@ -79,11 +72,6 @@ def get_student2(id):
         student["existing_skills"] = magic_skills
         student["desired_skills"] = desired_skills
         return redirect('/')
-    else:
-        return render_template("student_edit.html", student=student)
-
-
-
 
 @app.route("/student_stats", methods=["GET"])
 def student_stats():
@@ -113,8 +101,6 @@ def student_stats():
         count_desired = desired_skills.count(skill)
         if count_desired:
             desired_list.append({'y': count_desired, 'label': skill})
-
-
     for added in student:
         cday = added["creation_time"].split()[0]
         cmonth = added["creation_time"].split()[1]
@@ -126,12 +112,8 @@ def student_stats():
     for current_month in months:
         count_month = month_stats.count(current_month)
         month_list.append({"y": count_month, "label": current_month})
-
-
     return render_template("student_stats.html", counts_existing=existing_list,
                            counts_desired=desired_list, counts_day=day_list, counts_month=month_list)
-
-
 
 @app.route("/students/<int:id>/delete", methods=["GET"])
 def delete_student(id):
@@ -147,7 +129,6 @@ def add_header(r):
     r.headers["Expires"] = "0"
     r.headers['Cache-Control'] = 'public, max-age=0'
     return r
-
 
 if __name__ == "__main__":
     time.sleep(0.5)

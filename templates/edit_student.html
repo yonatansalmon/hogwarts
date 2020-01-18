@@ -3,34 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link
-    rel="stylesheet"
-    href="{{ url_for('static', filename='css/main.css') }}"
-  />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
 </head>
 <body>
   
-    <span class="button_position">
+    <div class="button_position">
         <div class="link_container"><a class="link" href="/">Student List</a></div class="link-container">
-            <span class="link_container"><a class="link" href="/add_student">Add Student</a></span>
-    <span class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></span>
-
-  </span>
-  <h1 class="list_title_add">Edit Student</h1>
+        <div class="link_container"><a class="link" href="/add_student">Add Student</a></div>
+        <div class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></div>
+    </div>
+    <h1 class="list_title_add">Edit Student</h1>
 <form action="edit" method="post">
-      
     <table align="center" cellpadding = "10">
-
         <tr class="border_bottom">
             <td>First Name</td>
             <td><input type="text" name="First_Name" value = {{student.first_name}}></td>
         </tr>
-
         <tr class="border_bottom">
             <td>Last Name</td>
             <td><input type="text" name="Last_Name" value="{{student.last_name}}"></td>
         </tr>
-
         <tr class="border_bottom">
             <td>Course</td>
             <td>
@@ -43,16 +35,12 @@
                 </select>
             </td>
         </tr>
-
         <tr>
             <td>Magic Skills</td> <td>Level </td>
         </tr>
-
         <tr>
-
             <td>
                 <select  name="magic_skills[]">
-
                     <option class="prev_option" >{{student.existing_skills[0].skill}}</option>
                     <option value="Alchemy">Alchemy</option>
                     <option value="Animation">Animation</option>
@@ -82,99 +70,90 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-
                 </select>
-
             </td>
+        </tr>
+        <tr>
 
-    </tr>
+            <td>
+            <select  name="magic_skills[]">
+                <option class="prev_option" >{{student.existing_skills[1].skill}}</option>
+                <option value="Alchemy">Alchemy</option>
+                <option value="Animation">Animation</option>
+                <option value="Conjuror">Conjuror</option>
+                <option value="Disintegration">Disintegration</option>
+                <option value="Elemental">Elemental</option>
+                <option value="Healing">Healing</option>
+                <option value="Illusion">Illusion</option>
+                <option value="Immortality">Immortality</option>
+                <option value="Invisibility">Invisibility</option>
+                <option value="Invulnerability">Invulnerability</option>
+                <option value="Necromancer">Necromancer</option>
+                <option value="Omnipresent">Omnipresent</option>
+                <option value="Omniscient">Omniscient</option>
+                <option value="Poison">Poison</option>
+                <option value="Possession">Possession</option>
+                <option value="Self-detonation">Self-detonation</option>
+                <option value="Summoning">Summoning</option>
+                <option value="Water breathing">Water breathing</option>
+             </select>
+            </td>
+            <td>
+            <select  name="lvl[]">
+                <option class="prev_option" >{{student.existing_skills[1].level}}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select>
+                </td>
+        </tr>
          <tr>
 
-        <td>
-      <select  name="magic_skills[]">
-          <option class="prev_option" >{{student.existing_skills[1].skill}}</option>
-
-            <option value="Alchemy">Alchemy</option>
-            <option value="Animation">Animation</option>
-            <option value="Conjuror">Conjuror</option>
-            <option value="Disintegration">Disintegration</option>
-            <option value="Elemental">Elemental</option>
-            <option value="Healing">Healing</option>
-            <option value="Illusion">Illusion</option>
-            <option value="Immortality">Immortality</option>
-            <option value="Invisibility">Invisibility</option>
-            <option value="Invulnerability">Invulnerability</option>
-            <option value="Necromancer">Necromancer</option>
-            <option value="Omnipresent">Omnipresent</option>
-            <option value="Omniscient">Omniscient</option>
-             <option value="Poison">Poison</option>
-             <option value="Possession">Possession</option>
-            <option value="Self-detonation">Self-detonation</option>
-             <option value="Summoning">Summoning</option>
-            <option value="Water breathing">Water breathing</option>
-    </select>
-        </td>
-        <td>
-           <select  name="lvl[]">
-            <option class="prev_option" >{{student.existing_skills[1].level}}</option>
-
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-
-           </select>
-
-        </td>
-
-    </tr>
-         <tr>
-
-        <td>
-      <select  name="magic_skills[]">
-           <option class="prev_option" >{{student.existing_skills[2].skill}}</option>
-            <option value="Alchemy">Alchemy</option>
-            <option value="Animation">Animation</option>
-            <option value="Conjuror">Conjuror</option>
-            <option value="Disintegration">Disintegration</option>
-            <option value="Elemental">Elemental</option>
-            <option value="Healing">Healing</option>
-            <option value="Illusion">Illusion</option>
-            <option value="Immortality">Immortality</option>
-            <option value="Invisibility">Invisibility</option>
-            <option value="Invulnerability">Invulnerability</option>
-            <option value="Necromancer">Necromancer</option>
-            <option value="Omnipresent">Omnipresent</option>
-            <option value="Omniscient">Omniscient</option>
-             <option value="Poison">Poison</option>
-             <option value="Possession">Possession</option>
-            <option value="Self-detonation">Self-detonation</option>
-             <option value="Summoning">Summoning</option>
-            <option value="Water breathing">Water breathing</option>
-    </select>
+             <td>
+            <select  name="magic_skills[]">
+                <option class="prev_option" >{{student.existing_skills[2].skill}}</option>
+                <option value="Alchemy">Alchemy</option>
+                <option value="Animation">Animation</option>
+                <option value="Conjuror">Conjuror</option>
+                <option value="Disintegration">Disintegration</option>
+                <option value="Elemental">Elemental</option>
+                <option value="Healing">Healing</option>
+                <option value="Illusion">Illusion</option>
+                <option value="Immortality">Immortality</option>
+                <option value="Invisibility">Invisibility</option>
+                <option value="Invulnerability">Invulnerability</option>
+                <option value="Necromancer">Necromancer</option>
+                <option value="Omnipresent">Omnipresent</option>
+                <option value="Omniscient">Omniscient</option>
+                <option value="Poison">Poison</option>
+                <option value="Possession">Possession</option>
+                <option value="Self-detonation">Self-detonation</option>
+                <option value="Summoning">Summoning</option>
+                <option value="Water breathing">Water breathing</option>
+        </select>
         </td>
         
         <td>
            <select  name="lvl[]">
-            <option class="prev_option" >{{student.existing_skills[2].level}}</option>
-
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-
+                <option class="prev_option" >{{student.existing_skills[2].level}}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
            </select>
 
         </td>
 
     </tr>
-         <tr>
+     <tr>
 
         <td>
-      <select  name="magic_skills[]">
-        <option class="prev_option" >{{student.existing_skills[3].skill}}</option>
+        <select  name="magic_skills[]">
+            <option class="prev_option" >{{student.existing_skills[3].skill}}</option>
             <option value="Alchemy">Alchemy</option>
             <option value="Animation">Animation</option>
             <option value="Conjuror">Conjuror</option>
@@ -188,10 +167,10 @@
             <option value="Necromancer">Necromancer</option>
             <option value="Omnipresent">Omnipresent</option>
             <option value="Omniscient">Omniscient</option>
-             <option value="Poison">Poison</option>
-             <option value="Possession">Possession</option>
+            <option value="Poison">Poison</option>
+            <option value="Possession">Possession</option>
             <option value="Self-detonation">Self-detonation</option>
-             <option value="Summoning">Summoning</option>
+            <option value="Summoning">Summoning</option>
             <option value="Water breathing">Water breathing</option>
     </select>
         </td>
@@ -199,23 +178,20 @@
         <td>
            <select  name="lvl[]">
             <option class="prev_option" >{{student.existing_skills[3].level}}</option>
-
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-
            </select>
-
         </td>
 
     </tr>
-         <tr class="border_bottom">
+     <tr class="border_bottom">
 
         <td>
-      <select  name="magic_skills[]">
-        <option class="prev_option" >{{student.existing_skills[4].skill}}</option>
+        <select  name="magic_skills[]">
+            <option class="prev_option" >{{student.existing_skills[4].skill}}</option>
             <option value="Alchemy">Alchemy</option>
             <option value="Animation">Animation</option>
             <option value="Conjuror">Conjuror</option>
@@ -235,34 +211,29 @@
              <option value="Summoning">Summoning</option>
             <option value="Water breathing">Water breathing</option>
     </select>
-        </td>
-        
+        </td>        
         <td>
            <select  name="lvl[]">
             <option class="prev_option" >{{student.existing_skills[4].level}}</option>
-
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-
            </select>
-
         </td>
 
     </tr>
     <tr class="border_bottom">
 
 
-
            <td>Desired Skills</td>
         <td>
       <select class="select_desired_skills"multiple name="desired_skills[]">
-      <option value="Alchemy">Alchemy</option>
-      <option value="Animation">Animation</option>
-      <option value="Conjuror">Conjuror</option>
-      <option value="Disintegration">Disintegration</option>
+        <option value="Alchemy">Alchemy</option>
+        <option value="Animation">Animation</option>
+        <option value="Conjuror">Conjuror</option>
+        <option value="Disintegration">Disintegration</option>
         <option value="Elemental">Elemental</option>
         <option value="Healing">Healing</option>
         <option value="Illusion">Illusion</option>
@@ -280,16 +251,12 @@
     </select>
         </td>
     </tr>
-
-
-
-
     <tr>
-    <td colspan="2" align="center">
-    <input type="submit" value="Submit">
-    </td>
+        <td colspan="2" align="center">
+        <input type="submit" value="Submit">
+        </td>
     </tr>
-    </table>
+  </table>
 </form>
 </body>
 </html>

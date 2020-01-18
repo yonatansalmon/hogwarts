@@ -1,73 +1,59 @@
 
-
 {% extends 'index.html' %}
 
-  {% block body %}
+{% block body %}
 
 
-  <span class="button_position">
-    <div class="link_container"><a class="link" href="/">Student List</a></div class="link-container">
-        <span class="link_container"><a class="link" href="/add_student">Add Student</a></span>
-<span class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></span>
+<div class="button_position">
+  <div class="link_container"><a class="link" href="/">Student List</a></div class="link-container">
+  <div class="link_container"><a class="link" href="/add_student">Add Student</a></div>
+  <div class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></div>
+</div>
 
-</span>
 <h1 class="list_title_add">Student</h1>
 
 <div id="one_student_container">
 
-<table id="one_student">
-
+  <table id="one_student">
     <tr class="border_bottom header_color" >
-        <th id="first_name">First Name</th>  
-        <th>Last Name</th> 
-        <th>Existing Skills</th>
-          <th>Desired Skills</th>
-          <th>Course Interest</th>
-          <th>Creation Time</th>
-          <th>Last Update</th>
+      <th id="first_name">First Name</th>  
+      <th>Last Name</th> 
+      <th>Existing Skills</th>
+      <th>Desired Skills</th>
+      <th>Course Interest</th>
+      <th>Creation Time</th>
+      <th>Last Update</th>
     </tr>
       <td  class="one_student_list name_font" > {{student.first_name}}</td>
       <td  class="one_student_list name_font"> {{student.last_name}}</td>
       <td id="existing_skills_cell" class="one_student_list">  
         <ol class="one_student_list">
-        {% for skill in student.existing_skills %}
-        <li>{{skill.skill}} {{skill.level}}</li>
+          {% for skill in student.existing_skills %}
+          <li>{{skill.skill}} {{skill.level}}</li>
+         {% endfor %}
+        </ol>
+      </td>
+      <td>   
+        <ol class="one_student_list" id="desired_skills">
+          {% for skill in student.desired_skills %}
+          <li>{{skill}}</li>
         {% endfor %}
-      </ol>
-    </td>
-    <td>   <ol class="one_student_list" id="desired_skills">
-      {% for skill in student.desired_skills %}
-      <li>{{skill}}</li>
-
-      {% endfor %}
-    </ol>
-  </td>
-  <td>
-    <ol class="one_student_list" id="course_interest">
-            {% for course in student.course_interest %}
-      <li>{{course}}</li>
-
-      {% endfor %}
-    </ol>
-    <td class="one_student_list">{{student.creation_time}}</td>
-    <td class="one_student_list">{{student.last_update}}</td>
-      
-
-
-
-
-
-
-     
-
-
-
-</table>
+        </ol>
+      </td>
+      <td>
+        <ol class="one_student_list" id="course_interest">
+          {% for course in student.course_interest %}
+          <li>{{course}}</li>
+        {% endfor %}
+        </ol>
+      <td class="one_student_list">{{student.creation_time}}</td>
+      <td class="one_student_list">{{student.last_update}}</td>
+  </table>
+  
 </div>
 <div class="btn">
   <div class="link_container" id="edit_button" ><a  class="link" href="/students/{{ student.id }}/edit" >Edit Student</a></div>
   <div class="link_container" id="delete_button"  ><a class="link" id="delete_button_size" href="{{url_for('delete_student', id=student.id)}}">Delete Student</a></div>
-
 </div>
   {% endblock %}
 </html>

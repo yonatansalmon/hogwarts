@@ -9,39 +9,32 @@
 
   {% extends 'index.html' %} {% block body %}
   <div class="container">
-    <div>
- 
-     
+    <div> 
       <h1 class="list_title_show">Hogwarts Student List</h1>
-      <span class="button_position">
-      <span class="link_container"><a class="link" href="/add_student">Add Student</a></span>
-      <span class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></span>
-    </span>
+      <div class="button_position">
+      <div class="link_container"><a class="link" href="/add_student">Add Student</a></div>
+      <div class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></div>
     </div>
-
-    <table>
-      <tr class="border_bottom header_color">
-        <th id="id_title">ID</th>
-        <th id="first_name_student">First Lame</th>
-        <th>Last Name</th>
-        <th>Existing Skills</th>
-        <th>Desired Skills</th>
-        <th >Course Interest</th>
-        <th>Creation Time</th>
-      </tr>
-
+  </div>
+  <table>
+    <tr class="border_bottom header_color">
+      <th id="id_title">ID</th>
+      <th id="first_name_student">First Lame</th>
+      <th>Last Name</th>
+      <th>Existing Skills</th>
+      <th>Desired Skills</th>
+      <th >Course Interest</th>
+      <th>Creation Time</th>
+    </tr>
       {% for student in students_list %}
-
-      <tr class="border_bottom">
+    <tr class="border_bottom">
         <td id="center_id"><a id="id" href="/students/{{student.id}}">{{student.id}}</a></td>
         <td id="first_name_data" class="name_font">{{student.first_name}}</td>
         <td id="last_name_data" class="name_font">{{student.last_name}}</td>
-      
         <td>
           <ol class="student_color">
             {% for skill in student.existing_skills %}
             <li>{{skill.skill}} {{skill.level}}</li>
-
             {% endfor %}
           </ol>
         </td>
@@ -49,7 +42,6 @@
           <ol class="student_color">
             {% for skill in student.desired_skills %}
             <li>{{skill}}</li>
-
             {% endfor %}
           </ol>
         </td>
@@ -57,15 +49,12 @@
           <ol class="student_color">
             {% for course in student.course_interest %}
             <li>{{course}}</li>
-
             {% endfor %}
           </ol>
         </td>
         <td class="student_color">{{student.creation_time}}</td>
       </tr>
-
       {% endfor %} {% endblock %}
-    </table>
+    </table> 
   </div>
-
 </html>

@@ -4,6 +4,7 @@ import random
 magic_skills = ["Alchemy", "Animation", "Conjuror", "Disintegration", "Elemental", "Healing", "Illusion", "Immortality",
                 "Invisibility", "Invulnerability", "Necromancer", "Omnipresent", "Omniscient", "Poison", "Possession",
                 "Self-detonation", "Summoning", "Water-breathing"]
+
 level = [1, 2, 3, 4, 5]
 
 days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
@@ -120,18 +121,3 @@ students = [
 ]
 
 
-
-labels = [
-    'Alchemy', 'Animation', 'Conjuror', 'Disintegration',
-    'Elemental', 'Healing', 'Illusion', 'Immortality',
-    'Invisibility', 'Invulnerability', 'Necromancer', 'Omnipresent',
-    "Omniscient", "Poison", "Possession", "Self-detonation", "Summoning",
-    "Water breathing"]
-
-colors = [
-    "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA",
-    "#ABCDEF", "#DDDDDD", "#ABCABC", "#4169E1",
-    "#C71585", "#FF4500", "#FEDCBA", "#8B0000",
-    "#7FFF00", "#6495ED", "#00008B", "	#A9A9A9",
-    "#8B008B", "#FF1493"
-]

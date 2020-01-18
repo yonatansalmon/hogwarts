@@ -2,22 +2,22 @@
 
 {% block body %}
 
-    <span class="button_position">
+<div class="button_position">
     <div class="link_container"><a class="link" href="/">Student List</a></div class="link-container">
-    <span class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></span>
-    </span>
-    <h1 class="list_title_add">Student Registration Form</h1>
+    <div class="link_container" id="student_stats_button"><a class="link" href="/student_stats">Student's Stats</a></div>
+</div>
+<h1 class="list_title_add">Student Registration Form</h1>
 
 <form action="/add_student", method="post">
-<table align="center" cellpadding = "10">
-    <tr class="border_bottom">
-        <td>First Name</td>
-        <td><input type="text" name="First_Name" maxlength="30"/></td>
-    </tr>
-    <tr class="border_bottom">
-        <td>Last Name</td>
-        <td><input type="text" name="Last_Name" maxlength="30"/></td>
-    </tr>
+    <table align="center" cellpadding = "10">
+        <tr class="border_bottom">
+            <td>First Name</td>
+            <td><input type="text" name="First_Name" maxlength="30"/></td>
+        </tr>
+        <tr class="border_bottom">
+            <td>Last Name</td>
+            <td><input type="text" name="Last_Name" maxlength="30"/></td>
+        </tr>
     <tr class="border_bottom">
         <td>Course</td>
          <td>
@@ -242,15 +242,13 @@
         </td>
     </tr>
     <tr>
-    <td colspan="2" align="center">
-    <input type="submit" value="Submit">
-    </td>
+        <td colspan="2" align="center">
+        <input type="submit" value="Submit">
+        </td>
     </tr>
     </table>
 
 </form>
-
-
 
 {% endblock %}
 </html>
